@@ -49,7 +49,7 @@
 
         //Hiddenの設定
         document.getElementById("name").value = decodeURIComponent(location.hash).substr(1);
-        document.getElementById("hname").innerHTML = decodeURIComponent(location.hash).substr(1);
+        document.getElementById("hname").innerText = decodeURIComponent(location.hash).substr(1);
         document.getElementById("post").action = "chat.php"+location.hash;
       }
 		</script>
@@ -70,9 +70,9 @@
             $content=$row{"content"};
             ?>
               <tr>
-                <td><?php echo $name ?></td>
-                <td><?php echo $hash ?></td>
-                <td><?php echo $content ?></td>
+                <td><?php echo htmlspecialchars($name) ?></td>
+                <td><?php echo htmlspecialchars($hash) ?></td>
+                <td><?php echo htmlspecialchars($content) ?></td>
               </tr>
             <?php
           }
